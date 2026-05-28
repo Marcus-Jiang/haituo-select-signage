@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    ports:
+      - "65001:65001"
+    volumes:
+      - .:/app
+    container_name: haituo_select_signage
+    restart: unless-stopped

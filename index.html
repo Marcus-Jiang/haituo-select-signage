@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>カイタク選品 - デジタルサイネージ | HaituoSelect - Signage</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <meta property="og:title" content="カイタク選品 - デジタルサイネージ" />
+    <meta property="og:description" content="業務用ディスプレイ製品選定プラットフォーム / 商用显示产品选品平台" />
+    <meta property="og:type" content="website" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <header class="top-bar">
+        <div class="top-bar-inner">
+            <div class="flex items-center gap-3 flex-1 min-w-0">
+                <div class="flex items-center gap-2.5">
+                    <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--accent-gold);">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <path d="M8 21h8" />
+                        <path d="M12 17v4" />
+                    </svg>
+                    <h1 id="site-title" class="text-base font-medium tracking-wider truncate" style="color: rgba(255,255,255,0.95);">
+                        カイタク選品
+                    </h1>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button id="btn-jp" class="lang-btn text-xs font-medium px-3 py-1.5 rounded-md border transition-all duration-200"
+                    style="background-color: var(--primary-color); color: white; border-color: var(--primary-color);">日本語</button>
+                <button id="btn-cn" class="lang-btn text-xs font-medium px-3 py-1.5 rounded-md border transition-all duration-200"
+                    style="background-color: transparent; color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.12);">中文</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-8 pt-20 pb-4">
+        <div id="breadcrumb" class="text-xs font-medium tracking-wide"></div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-8 pb-20">
+        <div id="category-nav" class="mb-10"></div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+    </main>
+
+    <div id="detail-modal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4"
+        style="background-color: rgba(15,23,42,0.50); backdrop-filter: blur(4px);">
+        <div class="bg-white rounded-2xl max-w-7xl w-full flex flex-row"
+            style="animation: fadeScaleIn 0.25s ease-out forwards; position: relative; box-shadow: var(--shadow-lg); max-height: calc(100vh - 2rem);">
+            <div id="detail-image-area" class="md:w-1/2 bg-white flex items-center justify-center p-8 min-h-[300px] sticky top-0 self-start"></div>
+            <div id="detail-text-area" class="md:w-1/2 p-8 overflow-y-auto" style="max-height: calc(100vh - 2rem);"></div>
+            <button id="detail-close-btn"
+                class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full flex items-center justify-center bg-white/90 hover:bg-white shadow-sm transition-all duration-200 cursor-pointer"
+                onclick="IndexRenderer.closeDetailModal()">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: var(--text-secondary);">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden">
+        <div class="flex items-center gap-2.5">
+            <span id="toast-icon"></span>
+            <span id="toast-message"></span>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/dataService.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
