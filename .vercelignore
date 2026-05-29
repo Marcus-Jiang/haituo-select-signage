@@ -1,7 +1,6 @@
-app.py
-requirements.txt
+app.py.backup
+requirements.txt.backup
 Dockerfile
 docker-compose.yml
-admin.html
 .trae/
 __pycache__/
