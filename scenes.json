@@ -1,0 +1,401 @@
+[
+  {
+    "name_cn": "便利店场景",
+    "name_jp": "コンビニシーン",
+    "scenes": [
+      {
+        "name_cn": "便利店场景1",
+        "name_jp": "コンビニシーン1",
+        "images": [
+          {
+            "path": "scenes/便利店场景/便利店场景1.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name_cn": "餐饮店场景",
+    "name_jp": "飲食店のシーン",
+    "scenes": [
+      {
+        "name_cn": "餐饮店场景1",
+        "name_jp": "飲食店のシーン1",
+        "images": [
+          {
+            "path": "scenes/餐饮店场景/餐饮店场景1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "餐饮店场景2",
+        "name_jp": "飲食店のシーン2",
+        "images": [
+          {
+            "path": "scenes/餐饮店场景/餐饮店场景2.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "餐饮店场景3",
+        "name_jp": "飲食店のシーン3",
+        "images": [
+          {
+            "path": "scenes/餐饮店场景/餐饮店场景3.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "酒吧",
+        "name_jp": "バー",
+        "images": [
+          {
+            "path": "scenes/餐饮店场景/酒吧.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "咖啡店1",
+        "name_jp": "喫茶店1",
+        "images": [
+          {
+            "path": "scenes/餐饮店场景/咖啡店1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "咖啡店2",
+        "name_jp": "喫茶店2",
+        "images": [
+          {
+            "path": "scenes/餐饮店场景/咖啡店2.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "奶茶店",
+        "name_jp": "ミルクティー店",
+        "images": [
+          {
+            "path": "scenes/餐饮店场景/奶茶店.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name_cn": "超市场景",
+    "name_jp": "スーパーマーケットシーン",
+    "scenes": [
+      {
+        "name_cn": "超市场景1",
+        "name_jp": "スーパーマーケットシーン1",
+        "images": [
+          {
+            "path": "scenes/超市场景/超市场景1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "超市场景2",
+        "name_jp": "スーパーマーケットシーン2",
+        "images": [
+          {
+            "path": "scenes/超市场景/超市场景2.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "超市场景3",
+        "name_jp": "スーパーマーケットシーン3",
+        "images": [
+          {
+            "path": "scenes/超市场景/超市场景3.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "超市场景4",
+        "name_jp": "スーパーマーケットシーン4",
+        "images": [
+          {
+            "path": "scenes/超市场景/超市场景4.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name_cn": "酒店场景",
+    "name_jp": "ホテルシーン",
+    "scenes": [
+      {
+        "name_cn": "酒店场景1",
+        "name_jp": "ホテルシーン1",
+        "images": [
+          {
+            "path": "scenes/酒店场景/酒店场景1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "酒店场景2",
+        "name_jp": "ホテルシーン2",
+        "images": [
+          {
+            "path": "scenes/酒店场景/酒店场景2.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name_cn": "集会场景",
+    "name_jp": "イベントシーン",
+    "scenes": [
+      {
+        "name_cn": "集会场景1",
+        "name_jp": "イベントシーン1",
+        "images": [
+          {
+            "path": "scenes/集会场景/集会场景1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "集会场景2",
+        "name_jp": "イベントシーン2",
+        "images": [
+          {
+            "path": "scenes/集会场景/集会场景2.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "演唱会",
+        "name_jp": "コンサート",
+        "images": [
+          {
+            "path": "scenes/集会场景/演唱会.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name_cn": "其他场景",
+    "name_jp": "その他のシーン",
+    "scenes": [
+      {
+        "name_cn": "其他场景1",
+        "name_jp": "その他のシーン1",
+        "images": [
+          {
+            "path": "scenes/其他场景/其他场景1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "其他场景2",
+        "name_jp": "その他のシーン1",
+        "images": [
+          {
+            "path": "scenes/其他场景/其他场景2.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "机场",
+        "name_jp": "空港",
+        "images": [
+          {
+            "path": "scenes/其他场景/机场.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "汽车销售店",
+        "name_jp": "自動車販売店",
+        "images": [
+          {
+            "path": "scenes/其他场景/汽车销售店.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "图书馆",
+        "name_jp": "図書館",
+        "images": [
+          {
+            "path": "scenes/其他场景/图书馆.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "卡拉ok",
+        "name_jp": "カラオケ",
+        "images": [
+          {
+            "path": "scenes/其他场景/卡拉ok.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "独立商铺",
+        "name_jp": "独立店舗",
+        "images": [
+          {
+            "path": "scenes/其他场景/独立商铺.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name_cn": "商场场景",
+    "name_jp": "モールのシーン",
+    "scenes": [
+      {
+        "name_cn": "商场场景1",
+        "name_jp": "モールのシーン1",
+        "images": [
+          {
+            "path": "scenes/商场场景/商场场景1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "商场场景2",
+        "name_jp": "モールのシーン2",
+        "images": [
+          {
+            "path": "scenes/商场场景/商场场景2.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "商场场景3",
+        "name_jp": "モールのシーン3",
+        "images": [
+          {
+            "path": "scenes/商场场景/商场场景3.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "商场场景4",
+        "name_jp": "モールのシーン4",
+        "images": [
+          {
+            "path": "scenes/商场场景/商场场景4.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "商场场景5",
+        "name_jp": "モールのシーン5",
+        "images": [
+          {
+            "path": "scenes/商场场景/商场场景5.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "商场场景6",
+        "name_jp": "モールのシーン6",
+        "images": [
+          {
+            "path": "scenes/商场场景/商场场景6.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "服装店1",
+        "name_jp": "アパレル1",
+        "images": [
+          {
+            "path": "scenes/商场场景/服装店1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "服装店2",
+        "name_jp": "アパレル2",
+        "images": [
+          {
+            "path": "scenes/商场场景/服装店2.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "服装店3",
+        "name_jp": "衣料品店3",
+        "images": [
+          {
+            "path": "scenes/商场场景/服装店3.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "电器店1",
+        "name_jp": "電気屋1",
+        "images": [
+          {
+            "path": "scenes/商场场景/电器店1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "电器店2",
+        "name_jp": "電気屋 2",
+        "images": [
+          {
+            "path": "scenes/商场场景/电器店2.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "电器店3",
+        "name_jp": "電気屋",
+        "images": [
+          {
+            "path": "scenes/商场场景/电器店3.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name_cn": "写字楼场景",
+    "name_jp": "オフィスビルのシーン",
+    "scenes": [
+      {
+        "name_cn": "写字楼场景1",
+        "name_jp": "オフィスビルのシーン1",
+        "images": [
+          {
+            "path": "scenes/写字楼场景/写字楼场景1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "会议室1",
+        "name_jp": "会議室1",
+        "images": [
+          {
+            "path": "scenes/写字楼场景/会议室1.webp"
+          }
+        ]
+      },
+      {
+        "name_cn": "会议室2",
+        "name_jp": "会議室2",
+        "images": [
+          {
+            "path": "scenes/写字楼场景/会议室2.webp"
+          }
+        ]
+      }
+    ]
+  }
+]
