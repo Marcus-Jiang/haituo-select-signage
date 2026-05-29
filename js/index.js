@@ -264,10 +264,23 @@ const IndexRenderer = {
 
         try {
             const lang = I18n.currentLang === 'cn' ? 'cn' : 'jp';
-            const result = await API.getDetail(coverPath, lang);
+            let content = '';
 
-            if (result.success && result.content) {
-                const renderedHtml = marked.parse(result.content);
+            if (DataService._isStaticMode) {
+                const mdPath = coverPath.replace(/^images\//, 'details/').replace(/\.[^.]+$/, '_' + lang + '.md');
+                const resp = await fetch(mdPath);
+                if (resp.ok) {
+                    content = await resp.text();
+                }
+            } else {
+                const result = await API.getDetail(coverPath, lang);
+                if (result.success && result.content) {
+                    content = result.content;
+                }
+            }
+
+            if (content) {
+                const renderedHtml = marked.parse(content);
                 textArea.innerHTML = `<div class="detail-text-content"><h2 class="detail-product-title">${productName}</h2><div class="detail-md-body">${renderedHtml}</div></div>`;
             } else {
                 textArea.innerHTML = `<div class="detail-text-content"><h2 class="detail-product-title">${productName}</h2><p style="color: var(--text-muted)">${I18n.getDetailNoDescText()}</p></div>`;

@@ -137,31 +137,49 @@ var ScenePage = {
     _loadScenes: function() {
         const self = this;
 
+        if (DataService._isStaticMode) {
+            Promise.all([
+                fetch('scenes_mapping.json').then(function(r) { return r.ok ? r.json() : []; }),
+                fetch('scenes.json').then(function(r) { return r.ok ? r.json() : []; })
+            ]).then(function(results) {
+                var mapping = results[0] || [];
+                var scenesData = results[1] || [];
+                self._processScenes(mapping, scenesData);
+            }).catch(function() {
+                self._showEmpty();
+            });
+            return;
+        }
+
         Promise.all([
             API.getMapping(),
             API.getScenes()
         ]).then(function(results) {
-            const mapping = results[0] || [];
-            const scenesData = results[1] || [];
-
-            const matchedSceneNames = [];
-            for (let i = 0; i < mapping.length; i++) {
-                const m = mapping[i];
-                if (m.productname === self.productKey && m.scene) {
-                    matchedSceneNames.push(m.scene);
-                }
-            }
-
-            const imagePaths = self._resolveImagePaths(matchedSceneNames, scenesData);
-
-            if (imagePaths.length === 0) {
-                self._showEmpty();
-            } else {
-                self._showSlideshow(imagePaths);
-            }
+            var mapping = results[0] || [];
+            var scenesData = results[1] || [];
+            self._processScenes(mapping, scenesData);
         }).catch(function() {
             self._showEmpty();
         });
+    },
+
+    _processScenes: function(mapping, scenesData) {
+        var self = this;
+        var matchedSceneNames = [];
+        for (var i = 0; i < mapping.length; i++) {
+            var m = mapping[i];
+            if (m.productname === self.productKey && m.scene) {
+                matchedSceneNames.push(m.scene);
+            }
+        }
+
+        var imagePaths = self._resolveImagePaths(matchedSceneNames, scenesData);
+
+        if (imagePaths.length === 0) {
+            self._showEmpty();
+        } else {
+            self._showSlideshow(imagePaths);
+        }
     },
 
     _resolveImagePaths: function(sceneNames, scenesData) {

@@ -91,5 +91,6 @@ function getImagePlaceholderSvg(text) {
     var defaultText = lang === 'cn' ? '暂无图片' : '画像なし';
     var displayText = text || defaultText;
 
-    return 'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect fill=\'%23FFFFFF\' width=\'200\' height=\'200\'/><text x=\'100\' y=\'110\' text-anchor=\'middle\' fill=\'%239A9A95\' font-size=\'14\'>' + encodeURIComponent(displayText) + '</text></svg>';
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%23FFFFFF" width="200" height="200"/><text x="100" y="110" text-anchor="middle" fill="%239A9A95" font-size="14">' + encodeURIComponent(displayText) + '</text></svg>';
+    return 'data:image/svg+xml,' + svg;
 }

@@ -4,6 +4,8 @@
 
 const DataService = {
 
+    _isStaticMode: false,
+
     async loadData() {
         try {
             const result = await API.getData();
@@ -11,7 +13,7 @@ const DataService = {
             AppState.init(data);
             return data;
         } catch (error) {
-            console.error('API error:', error);
+            this._isStaticMode = true;
             try {
                 const response = await fetch('data.json');
                 if (!response.ok) throw new Error('HTTP ' + response.status);
