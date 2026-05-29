@@ -1,0 +1,8 @@
+app.py
+requirements.txt
+Dockerfile
+docker-compose.yml
+admin.html
+.gitignore
+.trae/
+__pycache__/
