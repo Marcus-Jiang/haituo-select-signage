@@ -299,7 +299,11 @@ const IndexRenderer = {
         const key = encodeURIComponent(productKey);
         const lang = I18n.currentLang;
         const url = 'scene.html?key=' + key + '&name_cn=' + nameCn + '&name_jp=' + nameJp + '&lang=' + lang;
-        window.open(url, '_blank');
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.click();
     },
 
     _getProductKey(product) {
