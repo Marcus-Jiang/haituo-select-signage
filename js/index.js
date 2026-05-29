@@ -203,7 +203,7 @@ const IndexRenderer = {
             this._displayProducts.push(product);
 
             const coverImg = product.images && product.images.length > 0 ? product.images[0] : null;
-            const coverPath = coverImg ? resolveMediaPath(coverImg.path) : '';
+            const coverPath = coverImg ? coverImg.path : '';
             const escapedName = escapeHtml(I18n.t(product));
             const sceneBtnText = escapeHtml(I18n.getSceneBtnText());
             const productKey = product.name_cn || '';
@@ -242,9 +242,8 @@ const IndexRenderer = {
 
         const productName = escapeHtml(I18n.t(product));
         const coverImg = product.images && product.images.length > 0 ? product.images[0] : null;
-        const rawCoverPath = coverImg ? coverImg.path : '';
-        const coverPath = resolveMediaPath(rawCoverPath);
-        const detailImagePath = resolveMediaPath(rawCoverPath.replace(/^images\//, 'details/'));
+        const coverPath = coverImg ? coverImg.path : '';
+        const detailImagePath = coverPath.replace(/^images\//, 'details/');
 
         let imgSrc = coverPath;
         try {
@@ -265,25 +264,17 @@ const IndexRenderer = {
 
         try {
             const lang = I18n.currentLang === 'cn' ? 'cn' : 'jp';
-            let content = '';
+            const mdPath = coverPath.replace(/^images\//, 'details/').replace(/\.\w+$/, '_' + lang + '.md');
+            const mdResp = await fetch(mdPath);
 
-            if (DataService._isStaticMode) {
-                const mdRawPath = rawCoverPath.replace(/^images\//, 'details/').replace(/\.[^.]+$/, '_' + lang + '.md');
-                const mdPath = resolveMediaPath(mdRawPath);
-                const resp = await fetch(mdPath);
-                if (resp.ok) {
-                    content = await resp.text();
+            if (mdResp.ok) {
+                const content = await mdResp.text();
+                if (content.trim()) {
+                    const renderedHtml = marked.parse(content);
+                    textArea.innerHTML = `<div class="detail-text-content"><h2 class="detail-product-title">${productName}</h2><div class="detail-md-body">${renderedHtml}</div></div>`;
+                } else {
+                    textArea.innerHTML = `<div class="detail-text-content"><h2 class="detail-product-title">${productName}</h2><p style="color: var(--text-muted)">${I18n.getDetailNoDescText()}</p></div>`;
                 }
-            } else {
-                const result = await API.getDetail(rawCoverPath, lang);
-                if (result.success && result.content) {
-                    content = result.content;
-                }
-            }
-
-            if (content) {
-                const renderedHtml = marked.parse(content);
-                textArea.innerHTML = `<div class="detail-text-content"><h2 class="detail-product-title">${productName}</h2><div class="detail-md-body">${renderedHtml}</div></div>`;
             } else {
                 textArea.innerHTML = `<div class="detail-text-content"><h2 class="detail-product-title">${productName}</h2><p style="color: var(--text-muted)">${I18n.getDetailNoDescText()}</p></div>`;
             }
