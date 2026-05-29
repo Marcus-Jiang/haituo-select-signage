@@ -3,4 +3,5 @@ requirements.txt.backup
 Dockerfile
 docker-compose.yml
 .trae/
+.venv/
 __pycache__/
