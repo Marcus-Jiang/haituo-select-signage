@@ -3,25 +3,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/images/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        }
-      ]
-    },
-    {
-      "source": "/scenes/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        }
-      ]
-    },
-    {
-      "source": "/details/(.*)",
+      "source": "/api/file",
       "headers": [
         {
           "key": "Cache-Control",

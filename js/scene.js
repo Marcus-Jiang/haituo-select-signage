@@ -236,7 +236,7 @@ var ScenePage = {
         const counter = document.getElementById('scene-counter');
         if (!img || !counter) return;
 
-        img.src = this.images[this.currentIndex];
+        img.src = resolveMediaPath(this.images[this.currentIndex]);
         img.alt = this._getProductName() + ' ' + (this.currentIndex + 1);
         counter.textContent = (this.currentIndex + 1) + ' / ' + this.images.length;
     },

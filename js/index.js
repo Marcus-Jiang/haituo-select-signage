@@ -203,7 +203,7 @@ const IndexRenderer = {
             this._displayProducts.push(product);
 
             const coverImg = product.images && product.images.length > 0 ? product.images[0] : null;
-            const coverPath = coverImg ? coverImg.path : '';
+            const coverPath = coverImg ? resolveMediaPath(coverImg.path) : '';
             const escapedName = escapeHtml(I18n.t(product));
             const sceneBtnText = escapeHtml(I18n.getSceneBtnText());
             const productKey = product.name_cn || '';
@@ -242,8 +242,9 @@ const IndexRenderer = {
 
         const productName = escapeHtml(I18n.t(product));
         const coverImg = product.images && product.images.length > 0 ? product.images[0] : null;
-        const coverPath = coverImg ? coverImg.path : '';
-        const detailImagePath = coverPath.replace(/^images\//, 'details/');
+        const rawCoverPath = coverImg ? coverImg.path : '';
+        const coverPath = resolveMediaPath(rawCoverPath);
+        const detailImagePath = resolveMediaPath(rawCoverPath.replace(/^images\//, 'details/'));
 
         let imgSrc = coverPath;
         try {
@@ -267,13 +268,14 @@ const IndexRenderer = {
             let content = '';
 
             if (DataService._isStaticMode) {
-                const mdPath = coverPath.replace(/^images\//, 'details/').replace(/\.[^.]+$/, '_' + lang + '.md');
+                const mdRawPath = rawCoverPath.replace(/^images\//, 'details/').replace(/\.[^.]+$/, '_' + lang + '.md');
+                const mdPath = resolveMediaPath(mdRawPath);
                 const resp = await fetch(mdPath);
                 if (resp.ok) {
                     content = await resp.text();
                 }
             } else {
-                const result = await API.getDetail(coverPath, lang);
+                const result = await API.getDetail(rawCoverPath, lang);
                 if (result.success && result.content) {
                     content = result.content;
                 }

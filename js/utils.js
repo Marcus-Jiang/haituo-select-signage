@@ -94,3 +94,16 @@ function getImagePlaceholderSvg(text) {
     var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%23FFFFFF" width="200" height="200"/><text x="100" y="110" text-anchor="middle" fill="%239A9A95" font-size="14">' + encodeURIComponent(displayText) + '</text></svg>';
     return 'data:image/svg+xml,' + svg;
 }
+
+function resolveMediaPath(originalPath) {
+    if (!originalPath) return '';
+    if (DataService._isStaticMode) {
+        var parts = originalPath.split('/');
+        if (parts.length >= 2) {
+            var dir = parts[0];
+            var file = parts.slice(1).join('/');
+            return '/api/file?dir=' + encodeURIComponent(dir) + '&file=' + encodeURIComponent(file);
+        }
+    }
+    return originalPath;
+}
