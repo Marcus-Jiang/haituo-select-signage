@@ -252,7 +252,7 @@ const IndexRenderer = {
         } catch (e) {}
 
         imageArea.innerHTML = imgSrc
-            ? `<img src="${imgSrc}" alt="${productName}" class="max-w-full max-h-[80vh] object-contain rounded-lg" onerror="this.onerror=null;this.src='${getImagePlaceholderSvg()}'" />`
+            ? `<img src="${imgSrc}" alt="${productName}" onerror="this.onerror=null;this.src='${getImagePlaceholderSvg()}'" />`
             : '';
 
         textArea.innerHTML = `<div class="detail-loading">${I18n.getDetailLoadingText()}</div>`;

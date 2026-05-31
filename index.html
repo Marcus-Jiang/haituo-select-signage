@@ -55,10 +55,12 @@
 
     <div id="detail-modal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4"
         style="background-color: rgba(15,23,42,0.50); backdrop-filter: blur(4px);">
-        <div class="bg-white rounded-2xl max-w-7xl w-full flex flex-row"
-            style="animation: fadeScaleIn 0.25s ease-out forwards; position: relative; box-shadow: var(--shadow-lg); max-height: calc(100vh - 2rem);">
-            <div id="detail-image-area" class="md:w-1/2 bg-white flex items-center justify-center p-8 min-h-[300px] sticky top-0 self-start"></div>
-            <div id="detail-text-area" class="md:w-1/2 p-8 overflow-y-auto" style="max-height: calc(100vh - 2rem);"></div>
+        <div class="detail-modal-inner bg-white rounded-2xl max-w-7xl w-full"
+            style="animation: fadeScaleIn 0.25s ease-out forwards; position: relative; box-shadow: var(--shadow-lg);">
+            <div class="detail-modal-body">
+                <div id="detail-image-area" class="detail-image-col"></div>
+                <div id="detail-text-area" class="detail-text-col"></div>
+            </div>
             <button id="detail-close-btn"
                 class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full flex items-center justify-center bg-white/90 hover:bg-white shadow-sm transition-all duration-200 cursor-pointer"
                 onclick="IndexRenderer.closeDetailModal()">
